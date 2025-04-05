@@ -1,0 +1,144 @@
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+      position: relative;
+      height: 60vh;       /* 60% da altura da viewport */
+      min-height: 300px;  /* garante um mínimo em telas muito pequenas */
+  }
+    
+  .title {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+  }
+  .timer-box {
+    position: relative;    /* torna os filhos absolutos relativos a este container */
+    overflow: hidden;      /* esconde o que sair dos limites */
+    background: #1a1a1a;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    /* remova ou zere o z-index anterior, se não for necessário */
+    /* z-index: 0; */
+  }
+  
+  .timer-number {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .recordacoes {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    width: 100%;
+  }
+  .recordacoes .year-box {
+    padding: 1rem;
+    text-align: center;
+    background-color: #fff;
+    margin: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    max-width: none;
+  }
+  
+  #heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      animation: heartbeat 1.5s infinite;
+      margin:0 auto
+  }
+  #heart:before,
+  #heart:after {
+      position: absolute;
+      content: "";
+      left: 50px;
+      top: 0;
+      width: 50px;
+      height: 80px;
+      background: #fff;
+      -moz-border-radius: 50px 50px 0 0;
+      border-radius: 50px 50px 0 0;
+      -webkit-transform: rotate(-45deg);
+         -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+           -o-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      -webkit-transform-origin: 0 100%;
+         -moz-transform-origin: 0 100%;
+          -ms-transform-origin: 0 100%;
+           -o-transform-origin: 0 100%;
+              transform-origin: 0 100%;
+  }
+  #heart:after {
+      left: 0;
+      -webkit-transform: rotate(45deg);
+         -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+           -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+      -webkit-transform-origin: 100% 100%;
+         -moz-transform-origin: 100% 100%;
+          -ms-transform-origin: 100% 100%;
+           -o-transform-origin: 100% 100%;
+              transform-origin :100% 100%;
+  }
+  
+  
+  
+  @keyframes heartbeat
+  {
+    0%
+    {
+      transform: scale( .75 );
+    }
+    20%
+    {
+      transform: scale( 1 );
+    }
+    40%
+    {
+      transform: scale( .75 );
+    }
+    60%
+    {
+      transform: scale( 1 );
+    }
+    80%
+    {
+      transform: scale( .75 );
+    }
+    100%
+    {
+      transform: scale( .75 );
+    }
+  }
+  .heartfall {
+    position: absolute;
+    top: -20px;            /* começa logo acima do container */
+    width: 20px;
+    height: 20px;
+    background: white;
+    transform: rotate(20deg);
+    animation: fall linear infinite;
+  }
+  .heartfall::before,
+  .heartfall::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+  }
+  .heartfall::before { top: -10px; left: 0; }
+  .heartfall::after  { top: 0;    left: 10px; }
+  
+  @keyframes fall {
+    0%   { transform: translateY(-50px) rotate(45deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(45deg); opacity: 0; }
+  }

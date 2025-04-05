@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wysla & Heder</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+        position: relative;
+        height: 60vh;       /* 60% da altura da viewport */
+        min-height: 300px;  /* garante um mínimo em telas muito pequenas */
+    }
+      
+    .title {
+      font-size: 2.5rem;
+      letter-spacing: 3px;
+      margin-bottom: 1rem;
+    }
+    .timer-box {
+      background:#1a1a1a;
+      z-index: -1;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: none;
+    }
+    .timer-number {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .recordacoes {
+      margin-top: 2rem;
+      padding: 2rem 0;
+      width: 100%;
+    }
+    .recordacoes .year-box {
+      padding: 1rem;
+      text-align: center;
+      background-color: #fff;
+      margin: 0.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      flex: 1;
+      max-width: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid text-center p-0">
+    <!-- Cabeçalho -->
+    <header class="position-relative" style="height: 60vh; min-height: 900px;">
+        <div class="bg-image position-absolute top-0 start-0 w-100 h-100"
+             style="background: url('./img/foto4.jpg') no-repeat center center;
+                    background-size: cover;
+                    filter: brightness(0.7);
+                    z-index: -1;">
+        </div>
+        <div class="gradient-overlay position-absolute top-0 start-0 w-100 h-100"
+       style="background: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0.19) 43%,
+                  rgba(0, 0, 0, 0.96) 100%
+              );
+              z-index: -1;">
+  </div>
+      <div class="h-100 d-flex justify-content-start align-items-end pb-5    px-5">
+        <div class="flex-columon">
+            <h1 class="display-4 text-white">WYSLA &amp; HEDER</h1>
+            <div id="heart" class="my-5"></div>
+            <h2 class="h3 text-white">Para sempre</h2>
+        </div>
+      </div>
+    </header>
+
+    <!-- Timer -->
+    <div class="timer-box text-white pb-5">
+        <!-- Corações caindo -->
+        <div class="heartfall" style="left: 10%; animation-duration: 4s;  animation-delay: 0s;"></div>
+        <div class="heartfall" style="left: 25%; animation-duration: 5s;  animation-delay: 1s;"></div>
+        <div class="heartfall" style="left: 40%; animation-duration: 6s;  animation-delay: 2s;"></div>
+        <div class="heartfall" style="left: 55%; animation-duration: 4.5s;animation-delay: 0.5s;"></div>
+        <div class="heartfall" style="left: 70%; animation-duration: 5.5s;animation-delay: 1.5s;"></div>
+        <div class="heartfall" style="left: 85%; animation-duration: 6.5s;animation-delay: 2.5s;"></div>
+      
+        
+      <h3 class="mb-4">Te amo há:</h3>
+      <div class="row gx-0">
+        <div class="col-12 col-md-4">
+          <div class="timer-number" id="hours">00</div>
+          <div>Horas</div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="timer-number" id="minutes">00</div>
+          <div>Minutos</div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="timer-number" id="seconds">00</div>
+          <div>Segundos</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data de atualização -->
+    <div class="text-muted mt-3" id="update-date"></div>
+
+    <!-- Recordações -->
+    <div class="recordacoes d-flex justify-content-center flex-wrap">
+      <h4 class="w-100 mb-4">Recordações</h4>
+      <div class="d-flex w-100 flex-wrap justify-content-center">
+        <div class="year-box">2024-2025</div>
+        <div class="year-box">2024-2025</div>
+        <div class="year-box">2024-2025</div>
+        <div class="year-box">2024-2025</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const startDate = new Date('2024-04-07T07:40:00');
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - startDate;
+      const hours   = Math.floor(diff / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+
+      document.getElementById('hours').textContent   = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+</body>
+</html>
