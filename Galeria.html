@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carousel com Legenda Acima da Imagem</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <style>
+    /* Limita a largura do carousel para que a imagem não ocupe a tela inteira */
+    .carousel-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    /* Estilização para a legenda ficar acima da imagem */
+    .carousel-caption-top {
+      padding: 1rem;
+    }
+    /* Remove o posicionamento padrão do carousel-caption */
+    .carousel-item > .carousel-caption {
+      position: static;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <div id="meuCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#meuCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#meuCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#meuCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#meuCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#meuCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#meuCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#meuCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#meuCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#meuCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
+        <button type="button" data-bs-target="#meuCarousel" data-bs-slide-to="9" aria-label="Slide 10"></button>
+        <button type="button" data-bs-target="#meuCarousel" data-bs-slide-to="10" aria-label="Slide 11"></button>
+        <button type="button" data-bs-target="#meuCarousel" data-bs-slide-to="11" aria-label="Slide 12"></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!-- Legenda acima da imagem -->
+          <div class="carousel-caption-top text-center">
+            <h5>Abril</h5>
+            <p>Primeiro mês</p>
+          </div>
+          <img src="img/foto6.jpg" class="d-block mx-auto img-fluid" alt="Primeiro Slide">
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption-top text-center">
+            <h5>Maio</h5>
+            <p>Segundo mês</p>
+          </div>
+          <img src="img/foto7.jpg" class="d-block mx-auto img-fluid" alt="Segundo Slide">
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption-top text-center">
+            <h5>Junho</h5>
+            <p>Terceiro mês</p>
+          </div>
+          <img src="img/foto3.jpg" class="d-block mx-auto img-fluid" alt="Terceiro Slide">
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption-top text-center">
+            <h5>Julho</h5>
+            <p>Quarto mês</p>
+          </div>
+          <img src="img/foto5.jpg" class="d-block mx-auto img-fluid" alt="Terceiro Slide">
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption-top text-center">
+            <h5>Setembro</h5>
+            <p>Quinto mês</p>
+          </div>
+          <img src="img/foto3.jpg" class="d-block mx-auto img-fluid" alt="Terceiro Slide">
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption-top text-center">
+            <h5>Outubro</h5>
+            <p>Sexto mês</p>
+          </div>
+          <img src="img/foto12.jpg" class="d-block mx-auto img-fluid" alt="Terceiro Slide">
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption-top text-center">
+            <h5>Novembro</h5>
+            <p>Setimo mês</p>
+          </div>
+          <img src="img/foto13.jpg" class="d-block mx-auto img-fluid" alt="Terceiro Slide">
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption-top text-center">
+            <h5>Dezembro</h5>
+            <p>Oitavo mês</p>
+          </div>
+          <img src="img/foto3.jpg" class="d-block mx-auto img-fluid" alt="Terceiro Slide">
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption-top text-center">
+            <h5>Janeiro</h5>
+            <p>Nono mês</p>
+          </div>
+          <img src="img/foto3.jpg" class="d-block mx-auto img-fluid" alt="Terceiro Slide">
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption-top text-center">
+            <h5>Fevereiro</h5>
+            <p>Décimo mês</p>
+          </div>
+          <img src="img/foto3.jpg" class="d-block mx-auto img-fluid" alt="Terceiro Slide">
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption-top text-center">
+            <h5>Março</h5>
+            <p>Décimo primeiro mês</p>
+          </div>
+          <img src="img/foto4.jpg" class="d-block mx-auto img-fluid" alt="Terceiro Slide">
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-caption-top text-center">
+            <h5>Abril</h5>
+            <p>Um ano</p>
+          </div>
+          <img src="img/foto3.jpg" class="d-block mx-auto img-fluid" alt="Terceiro Slide">
+        </div>
+      </div>
+
+      <!-- Controles -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#meuCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#meuCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle (inclui Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
